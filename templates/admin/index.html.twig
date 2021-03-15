@@ -1,25 +1,58 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello AdminController!{% endblock %}
-
+{% block title %}Homepage Admin{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-     {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+<body>
+     <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Welkom {{app.user.username}} bij het Kart Centrum</h1>
+          <p class="lead text-muted">In verband met de huidige coronamaatregelen is Kart Centrum Den Haag tijdelijk gesloten.</p>
         </div>
-    {% endif %}
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/XAMPP/xamppfiles/htdocs/oefen_examentraining/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/XAMPP/xamppfiles/htdocs/oefen_examentraining/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img src="{{ asset('kart1.png') }}" alt="Symfony!"/>
+                <div class="card-body">
+                  <h4>Kartheat 12+</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-lg btn-outline-secondary mx-auto">€ 8,50</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+                <div class="card-body">
+                  <h4>Kartheat 15+</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-lg btn-outline-secondary" >€ 12,50</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img src="kart!.jpg">
+                <div class="card-body">
+                  <h4>Kartheat Volwassen</h4>
+                  <div class="d-flex justify-content-between align-items-center" style="margin:5px">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-lg btn-default btn-outline-secondary">€ 15,50</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 {% endblock %}
