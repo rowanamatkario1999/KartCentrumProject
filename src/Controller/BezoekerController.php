@@ -17,4 +17,14 @@ class BezoekerController extends AbstractController
             'controller_name' => 'BezoekerController',
         ]);
     }
+
+    /**
+     * @Route("/kartactiviteiten", name="kartactiviteiten")
+     */
+    public function kartactiviteitenAction()
+    {
+        $repository=$this->getDoctrine()->getRepository(Soortactiviteit::class);
+        $soortactiviteiten=$repository->findAll();
+        return $this->render('bezoeker/kartactiviteiten.html.twig',array('boodschap'=>'Welkom','soortactiviteiten'=>$soortactiviteiten));
+    }
 }
